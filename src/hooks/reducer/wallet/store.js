@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { useEthers } from "@usedapp/core";
+import { useWallet } from "use-wallet";
 import moment from "moment";
 //
 import useLocalStorage from "../../storage";
@@ -7,7 +7,7 @@ import useLocalStorage from "../../storage";
 import reducer, { initialState, actionTypes } from "./reducer";
 //
 export default () => {
-  const { deactivate } = useEthers();
+  const wallet = useWallet();
 
   const [localStorageState, setLocalStorageState] = useLocalStorage(
     "localWallet",
@@ -46,7 +46,7 @@ export default () => {
 
   const _handleInActivateWallet = () => {
     actions.unsetWalletAddress();
-    deactivate();
+    wallet.reset();
   };
 
   const _handleCheckExpired = () => {

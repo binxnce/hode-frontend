@@ -1,22 +1,16 @@
-import { ChainId, DAppProvider } from "@usedapp/core";
+import { UseWalletProvider } from "use-wallet";
 //
 import { AppProvider } from "../hooks/context";
 // import "../styles/globals.css";
 //
-const config = {
-  readOnlyChainId: 56,
-  readOnlyUrls: {
-    56: "https://bsc-dataseed.binance.org",
-  },
-};
 //
 function MyApp({ Component, pageProps }) {
   return (
-    <AppProvider>
-      <DAppProvider config={config}>
+    <UseWalletProvider chainId={97}>
+      <AppProvider>
         <Component {...pageProps} />
-      </DAppProvider>
-    </AppProvider>
+      </AppProvider>
+    </UseWalletProvider>
   );
 }
 

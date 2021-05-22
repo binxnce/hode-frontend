@@ -1,29 +1,27 @@
 import { useContext, useEffect } from "react";
 import Head from "next/head";
-import { useEthers } from "@usedapp/core";
-import detectEthereumProvider from "@metamask/detect-provider";
+import { useWallet } from "use-wallet";
 //
 import { AppContext } from "../hooks/context";
 //
 export default function Home() {
+  const wallet = useWallet();
   const { walletState, walletActions } = useContext(AppContext);
-  const { activateBrowserWallet, account, deactivate } = useEthers();
 
   const _handleActivateWallet = () => {
-    activateBrowserWallet();
+    wallet.connect();
   };
 
   const _handleInActivateWallet = () => {
     walletActions.unsetWalletAddress();
-    deactivate();
+    wallet.reset();
   };
 
   useEffect(() => {
     const { walletAddress } = walletState;
-
-    if (account && !walletAddress) {
+    if (wallet && wallet.account && !walletAddress) {
       walletActions.setWalletAddress({
-        walletAddress: account,
+        walletAddress: wallet.account,
       });
     }
   });
