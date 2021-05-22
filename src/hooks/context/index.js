@@ -7,6 +7,7 @@ const AppContext = React.createContext();
 const AppProvider = (props) => {
   //
   const [walletState, walletActions] = walletStore();
+
   //
   return (
     <AppContext.Provider

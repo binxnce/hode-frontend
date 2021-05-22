@@ -4,9 +4,9 @@ import { AppProvider } from "../hooks/context";
 // import "../styles/globals.css";
 //
 const config = {
-  readOnlyChainId: ChainId.Mainnet,
+  readOnlyChainId: 56,
   readOnlyUrls: {
-    [ChainId.Mainnet]: "https://bsc-dataseed.binance.org/",
+    56: "https://bsc-dataseed.binance.org",
   },
 };
 //
