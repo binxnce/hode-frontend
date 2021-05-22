@@ -130,7 +130,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const ConnectButton = styled.button`
-  background-color: #008888;
+  background-color: #1890ff;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -139,7 +139,7 @@ const ConnectButton = styled.button`
   margin-top: 3px;
   margin-right: 25px;
   &:hover {
-    background-color: #005555;
+    background-color: #095ba3;
   }
 `;
 
@@ -150,19 +150,19 @@ const DisconnectWrapper = styled.div`
   margin-top: 3px;
   margin-right: 25px;
   padding: 5px;
-  background-color: #3aa8a8;
+  background-color: #5aa5e8;
   border-radius: 5px;
 `;
 
 const DisconnectButton = styled.button`
-  background-color: #008888;
+  background-color: #1890ff;
   border: none;
   border-radius: 5px;
   color: #fff;
   padding: 0px 15px;
   cursor: pointer;
   &:hover {
-    background-color: #005555;
+    background-color: #095ba3;
   }
 `;
 
